@@ -6,4 +6,4 @@ deploy:
       after:
         - pip3 install checkov
         - terraform show -json .tf-plan | jq '.' > tf.json
-        - checkov -f tf.json --quiet
+        - checkov -f tf.json --quiet || echo "Security checks failed" 1>&2 && exit 1
