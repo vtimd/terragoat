@@ -5,6 +5,6 @@ deploy:
     terraformPlan:
       after:
 #        - pip3 install checkov
-        - pip3 install --upgrade pip && pip3 install --upgrade setuptools\npip3 install bridgecrew
+        - pip3 install bridgecrew
 #        - terraform show -json .tf-plan | jq '.' > tf.json
 #        - checkov -f tf.json --quiet || echo 'Bridgecrew security checks failed - ' $(checkov -f tf.json --quiet | grep 'Passed checks:') 1>&2 && exit 1
